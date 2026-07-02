@@ -292,7 +292,7 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
         <div class="film-thumb">
           <img src="https://img.youtube.com/vi/RWHZ_zaT5EU/maxresdefault.jpg" alt="wait, no."/>
           <div class="film-overlay"><div class="film-play"></div></div>
-          <div class="film-badge">New · 5K views</div>
+          <div class="film-badge" data-video-id="RWHZ_zaT5EU" data-new="true">New · 5K views</div>
         </div>
         <div class="film-info">
           <div class="film-title">wait, no.</div>
@@ -304,7 +304,7 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
         <div class="film-thumb">
           <img src="https://img.youtube.com/vi/9zgOYS0U0u4/maxresdefault.jpg" alt="East of Silence"/>
           <div class="film-overlay"><div class="film-play"></div></div>
-          <div class="film-badge">34K views</div>
+          <div class="film-badge" data-video-id="9zgOYS0U0u4">34K views</div>
         </div>
         <div class="film-info">
           <div class="film-title">East of Silence</div>
@@ -316,7 +316,7 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
         <div class="film-thumb">
           <img src="https://img.youtube.com/vi/m7EDG0mnXZQ/maxresdefault.jpg" alt="The Blender Situation"/>
           <div class="film-overlay"><div class="film-play"></div></div>
-          <div class="film-badge">38K views</div>
+          <div class="film-badge" data-video-id="m7EDG0mnXZQ">38K views</div>
         </div>
         <div class="film-info">
           <div class="film-title">The Blender Situation</div>
@@ -328,7 +328,7 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
         <div class="film-thumb">
           <img src="https://img.youtube.com/vi/GIkJUjCeVUo/maxresdefault.jpg" alt="The Anatomy of Assembly"/>
           <div class="film-overlay"><div class="film-play"></div></div>
-          <div class="film-badge">55K views</div>
+          <div class="film-badge" data-video-id="GIkJUjCeVUo">55K views</div>
         </div>
         <div class="film-info">
           <div class="film-title">The Anatomy of Assembly</div>
@@ -339,7 +339,7 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
       <a href="https://www.youtube.com/@iammickeysingh" target="_blank" class="film-card fade">
         <div class="film-thumb" style="background:var(--teal-dark);display:flex;align-items:center;justify-content:center;min-height:180px">
           <div style="text-align:center;padding:24px">
-            <div style="font-family:var(--serif);font-size:2.5rem;color:var(--coral);margin-bottom:8px">130K+</div>
+            <div id="total-views-figure" style="font-family:var(--serif);font-size:2.5rem;color:var(--coral);margin-bottom:8px">130K+</div>
             <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)">Total Views</div>
           </div>
         </div>
@@ -512,5 +512,29 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:0.08});
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 setTimeout(()=>document.querySelector('#hero .fade')?.classList.add('in'),150);
+
+(function(){
+  function formatViews(n){
+    if(n>=1000000){return (Math.round(n/100000)/10)+'M';}
+    if(n>=1000){return Math.floor(n/1000)+'K';}
+    return String(n);
+  }
+  fetch('data/youtube-stats.json',{cache:'no-store'})
+    .then(r=>r.ok?r.json():null)
+    .then(data=>{
+      if(!data) return;
+      document.querySelectorAll('.film-badge[data-video-id]').forEach(el=>{
+        const views=data.videos && data.videos[el.getAttribute('data-video-id')];
+        if(typeof views!=='number') return;
+        const label=formatViews(views)+' views';
+        el.textContent=el.hasAttribute('data-new')?'New · '+label:label;
+      });
+      const totalEl=document.getElementById('total-views-figure');
+      if(totalEl && typeof data.totalViews==='number'){
+        totalEl.textContent=formatViews(data.totalViews)+'+';
+      }
+    })
+    .catch(()=>{});
+})();
 </script>
 </body></html>
