@@ -19,7 +19,7 @@ export default function Gallery({ immersive, onOpen }: { immersive: boolean; onO
       </h2>
       {immersive ? (
         <div className="fade">
-          <DeckCarousel items={items} cardClassName="gallery-card" />
+          <DeckCarousel items={items} cardClassName="gallery-card" variant="flat" />
         </div>
       ) : (
         <div className="gallery-grid">
