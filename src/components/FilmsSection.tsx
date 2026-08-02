@@ -63,7 +63,7 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
       <FilmThumbContent
         imgSrc={`https://img.youtube.com/vi/${film.id}/maxresdefault.jpg`}
         alt={film.alt}
-        badge={videoViewsLabel(film.id, film.isNew) ?? (film.isNew ? 'New · 5K views' : undefined)}
+        badge={videoViewsLabel(film.id, film.isNew) ?? (film.isNew ? `New · ${film.fallbackViews}` : film.fallbackViews)}
         title={film.title}
         meta={film.role}
       />
