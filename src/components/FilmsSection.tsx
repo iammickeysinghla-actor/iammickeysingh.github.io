@@ -104,7 +104,7 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
 
         {immersive ? (
           <div className="fade">
-            <DeckCarousel items={slides} cardClassName="film-card" />
+            <DeckCarousel items={slides} cardClassName="film-card" variant="flat" />
           </div>
         ) : (
           <div

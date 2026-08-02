@@ -48,7 +48,7 @@ export default function DeckCarousel({ items, cardClassName = '', variant = 'til
     const tx = sign * (flat ? 78 : 58) * (pose.sc / sideBase.sc);
     if (flat) {
       card.style.transform = `translateX(${tx}%) scale(${pose.sc})`;
-      card.style.boxShadow = 'none';
+      card.style.boxShadow = '';
     } else {
       const rz = sign * 6 * (pose.sc / sideBase.sc);
       card.style.transform = `translateX(${tx}%) translateY(${pose.ty}px) translateZ(${pose.z}px) rotateY(${rz}deg) rotateZ(${rz * 0.35}deg) scale(${pose.sc})`;
@@ -66,7 +66,7 @@ export default function DeckCarousel({ items, cardClassName = '', variant = 'til
         card.style.opacity = '1';
         card.style.pointerEvents = 'auto';
         card.style.transform = flat ? 'translateX(0) scale(1)' : 'translateZ(60px)';
-        card.style.boxShadow = flat ? 'none' : '0 34px 60px -22px rgba(24,18,12,0.45)';
+        card.style.boxShadow = flat ? '' : '0 34px 60px -22px rgba(24,18,12,0.45)';
       } else if (rel === 1) {
         card.style.pointerEvents = 'auto';
         applyPose(card, 'right', sideBase);
@@ -121,7 +121,7 @@ export default function DeckCarousel({ items, cardClassName = '', variant = 'til
         </button>
         <div className={`deck-stage ${flat ? 'flat' : ''}`}>
           {items.map((item, i) => {
-            const className = `deck-card ${cardClassName}`.trim();
+            const className = `deck-card ${flat ? 'flat' : ''} ${cardClassName}`.trim();
             const setRef = (el: HTMLElement | null) => {
               cardRefs.current[i] = el;
             };
