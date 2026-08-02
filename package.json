@@ -1,10 +1,13 @@
 {
   "name": "iammickeysingh.github.io",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "description": "Mickey Singh - Actor Website",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -14,7 +17,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.7.0",
     "framer-motion": "^12.43.0",
     "gsap": "^3.15.0",
@@ -27,7 +29,6 @@
     "@types/react-dom": "^19.2.4",
     "@types/three": "^0.185.3",
     "@vitejs/plugin-react": "^6.0.5",
-    "gh-pages": "^6.3.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.0"
   }
