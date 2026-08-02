@@ -1,6 +1,6 @@
 import { channelUrl, comingSoon, films } from '../data/content';
 import { useYoutubeStats } from '../hooks/useYoutubeStats';
-import FilmDeck, { type DeckSlide } from './FilmDeck';
+import DeckCarousel, { type CarouselItem } from './DeckCarousel';
 
 function FilmThumbContent({
   imgSrc,
@@ -55,9 +55,10 @@ function ChannelTileContent({ totalViews }: { totalViews: string }) {
 export default function FilmsSection({ immersive }: { immersive: boolean }) {
   const { videoViewsLabel, totalViewsLabel } = useYoutubeStats();
 
-  const filmSlides: DeckSlide[] = films.map((film) => ({
+  const filmSlides: CarouselItem[] = films.map((film) => ({
     key: film.id,
     href: `https://youtu.be/${film.id}`,
+    ariaLabel: film.title,
     content: (
       <FilmThumbContent
         imgSrc={`https://img.youtube.com/vi/${film.id}/maxresdefault.jpg`}
@@ -69,9 +70,10 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
     ),
   }));
 
-  const channelSlide: DeckSlide = {
+  const channelSlide: CarouselItem = {
     key: 'channel',
     href: channelUrl,
+    ariaLabel: 'View full channel',
     content: <ChannelTileContent totalViews={totalViewsLabel()} />,
   };
 
@@ -97,12 +99,12 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
         </div>
         <p className="fade" style={{ fontSize: '0.85rem', color: 'var(--muted)', lineHeight: 1.9, maxWidth: 560, marginBottom: 32 }}>
           Original films written, directed, and produced under{' '}
-          <strong style={{ color: '#1c1c1c' }}>Sunset III Productions</strong> — Mickey Singh's production company.
+          <strong style={{ color: '#1c1c1c' }}>Sunset III</strong> — Mickey Singh's production company.
         </p>
 
         {immersive ? (
           <div className="fade">
-            <FilmDeck slides={slides} />
+            <DeckCarousel items={slides} cardClassName="film-card" />
           </div>
         ) : (
           <div

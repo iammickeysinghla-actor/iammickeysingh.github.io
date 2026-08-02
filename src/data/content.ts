@@ -21,7 +21,7 @@ export const films: Film[] = [
 ];
 
 export const comingSoon = {
-  eyebrow: "Sunset III Productions · Next",
+  eyebrow: "Sunset III · Next",
   title: 'In Another Life, Tonight',
   meta: 'Short Film  ·  In Post-Production  ·  Summer 2026',
 };
@@ -33,7 +33,7 @@ export interface Credit {
 }
 
 export const filmCredits: Credit[] = [
-  { title: 'In Another Life, Tonight', sub: 'Sunset III Productions · Dir. Tony Tachney', role: 'Lead' },
+  { title: 'In Another Life, Tonight', sub: 'Sunset III · Dir. Tony Tachney', role: 'Lead' },
   { title: 'Between Places', sub: 'Cinema 3.0 · Dir. Amir Jaffar', role: 'Lead' },
   { title: "We Can't Lose You", sub: 'Dir. Matt Winters', role: 'Lead' },
   { title: 'CODE', sub: 'Dir. Francisco Rosas', role: 'Lead' },

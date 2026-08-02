@@ -60,6 +60,7 @@ export default function ParticleField() {
   return (
     <Canvas
       className="hero-particles"
+      style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}
       dpr={[1, 1.75]}
       camera={{ position: [0, 0, 5], fov: 50 }}
       gl={{ antialias: false, alpha: true, powerPreference: 'low-power' }}

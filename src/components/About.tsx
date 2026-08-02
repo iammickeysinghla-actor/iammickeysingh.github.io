@@ -23,7 +23,7 @@ export default function About() {
           </p>
           <p className="bio-p">
             Recent credits include the <strong>lead in <em>Between Places</em></strong> (Cinema 3.0, Dir. Amir Jaffar) and a
-            recurring role in <em>Strings Attached</em> Season 2. As founder of <strong>Sunset III Productions</strong>, he
+            recurring role in <em>Strings Attached</em> Season 2. As founder of <strong>Sunset III</strong>, he
             develops original work — including his debut short <em>In Another Life, Tonight</em>, in post-production for
             summer 2026.
           </p>

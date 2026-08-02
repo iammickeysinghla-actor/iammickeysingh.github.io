@@ -30,7 +30,7 @@ export default function App() {
       <About />
       <hr className="divider" style={{ margin: 0, borderColor: 'var(--teal-mid)' }} />
       <Credits immersive={immersive} />
-      <Gallery onOpen={setLightboxSrc} />
+      <Gallery immersive={immersive} onOpen={setLightboxSrc} />
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       <Training />
       <Contact />
