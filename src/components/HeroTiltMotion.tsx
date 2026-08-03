@@ -35,7 +35,11 @@ export default function HeroTiltMotion() {
   }
 
   return (
-    <div onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} style={{ position: 'absolute', inset: 0 }}>
+    <div
+      onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}
+      style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'flex-end' }}
+    >
       <motion.div className="hero-tilt" style={{ rotateX: imgRotateX, rotateY: imgRotateY }}>
         <img className="hero-img" src={heroImg} alt="Mickey Singh" loading="eager" fetchPriority="high" />
       </motion.div>
