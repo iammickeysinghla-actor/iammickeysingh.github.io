@@ -53,7 +53,7 @@ function ChannelTileContent({ totalViews }: { totalViews: string }) {
   );
 }
 
-export default function FilmsSection({ immersive }: { immersive: boolean }) {
+export default function FilmsSection() {
   const { videoViewsLabel, totalViewsLabel } = useYoutubeStats();
 
   const filmSlides: CarouselItem[] = films.map((film) => ({
@@ -116,15 +116,11 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
           <strong style={{ color: '#1c1c1c' }}>Sunset III</strong> — Mickey Singh's production company.
         </p>
 
-        {immersive ? (
-          <ErrorBoundary fallback={gridFallback}>
-            <div className="fade">
-              <DeckCarousel items={slides} cardClassName="film-card" variant="flat" />
-            </div>
-          </ErrorBoundary>
-        ) : (
-          gridFallback
-        )}
+        <ErrorBoundary fallback={gridFallback}>
+          <div className="fade">
+            <DeckCarousel items={slides} cardClassName="film-card" variant="flat" />
+          </div>
+        </ErrorBoundary>
 
         <div
           className="coming-soon-bar fade"

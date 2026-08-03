@@ -33,7 +33,7 @@ export default function App() {
         <Reel />
       </ErrorBoundary>
       <ErrorBoundary>
-        <FilmsSection immersive={immersive} />
+        <FilmsSection />
       </ErrorBoundary>
       <hr className="divider" />
       <ErrorBoundary>
@@ -44,7 +44,7 @@ export default function App() {
         <Credits immersive={immersive} />
       </ErrorBoundary>
       <ErrorBoundary>
-        <Gallery immersive={immersive} onOpen={setLightboxSrc} />
+        <Gallery onOpen={setLightboxSrc} />
       </ErrorBoundary>
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       <ErrorBoundary>

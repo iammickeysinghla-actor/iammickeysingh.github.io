@@ -2,7 +2,7 @@ import { galleryImages } from '../data/content';
 import DeckCarousel, { type CarouselItem } from './DeckCarousel';
 import ErrorBoundary from './ErrorBoundary';
 
-export default function Gallery({ immersive, onOpen }: { immersive: boolean; onOpen: (src: string) => void }) {
+export default function Gallery({ onOpen }: { onOpen: (src: string) => void }) {
   const items: CarouselItem[] = galleryImages.map((img, i) => ({
     key: img.src + i,
     ariaLabel: 'Open photo',
@@ -28,15 +28,11 @@ export default function Gallery({ immersive, onOpen }: { immersive: boolean; onO
       <h2 className="sec-title fade">
         The <em>Look</em>
       </h2>
-      {immersive ? (
-        <ErrorBoundary fallback={gridFallback}>
-          <div className="fade">
-            <DeckCarousel items={items} cardClassName="gallery-card" variant="flat" />
-          </div>
-        </ErrorBoundary>
-      ) : (
-        gridFallback
-      )}
+      <ErrorBoundary fallback={gridFallback}>
+        <div className="fade">
+          <DeckCarousel items={items} cardClassName="gallery-card" variant="flat" />
+        </div>
+      </ErrorBoundary>
     </section>
   );
 }
