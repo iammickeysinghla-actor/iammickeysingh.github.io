@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 const API_KEY = process.env.YOUTUBE_API_KEY;
 const CHANNEL_HANDLE = '@iammickeysingh';
 const VIDEO_IDS = ['RWHZ_zaT5EU', '9zgOYS0U0u4', 'm7EDG0mnXZQ', 'GIkJUjCeVUo'];
-const OUTPUT_PATH = fileURLToPath(new URL('../public/data/youtube-stats.json', import.meta.url));
+const OUTPUT_PATH = fileURLToPath(new URL('../data/youtube-stats.json', import.meta.url));
 
 async function fetchJson(url) {
   const res = await fetch(url);
