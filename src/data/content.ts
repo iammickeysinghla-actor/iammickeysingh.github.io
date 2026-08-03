@@ -11,15 +11,13 @@ export interface Film {
   role: string;
   alt: string;
   isNew?: boolean;
-  /** Shown until the live youtube-stats.json fetch resolves (or if it ever fails). */
-  fallbackViews: string;
 }
 
 export const films: Film[] = [
-  { id: 'RWHZ_zaT5EU', title: 'wait, no.', role: 'Writer · Director · Producer', alt: 'wait, no.', isNew: true, fallbackViews: '5K views' },
-  { id: '9zgOYS0U0u4', title: 'East of Silence', role: 'Writer · Director · Producer', alt: 'East of Silence', fallbackViews: '34K views' },
-  { id: 'm7EDG0mnXZQ', title: 'The Blender Situation', role: 'Writer · Director · Producer', alt: 'The Blender Situation', fallbackViews: '38K views' },
-  { id: 'GIkJUjCeVUo', title: 'The Anatomy of Assembly', role: 'Writer · Director · Producer', alt: 'The Anatomy of Assembly', fallbackViews: '55K views' },
+  { id: 'RWHZ_zaT5EU', title: 'wait, no.', role: 'Writer · Director · Producer', alt: 'wait, no.', isNew: true },
+  { id: '9zgOYS0U0u4', title: 'East of Silence', role: 'Writer · Director · Producer', alt: 'East of Silence' },
+  { id: 'm7EDG0mnXZQ', title: 'The Blender Situation', role: 'Writer · Director · Producer', alt: 'The Blender Situation' },
+  { id: 'GIkJUjCeVUo', title: 'The Anatomy of Assembly', role: 'Writer · Director · Producer', alt: 'The Anatomy of Assembly' },
 ];
 
 export const comingSoon = {
