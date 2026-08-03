@@ -1,6 +1,7 @@
 import { channelUrl, comingSoon, films } from '../data/content';
 import { useYoutubeStats } from '../hooks/useYoutubeStats';
 import DeckCarousel, { type CarouselItem } from './DeckCarousel';
+import ErrorBoundary from './ErrorBoundary';
 
 function FilmThumbContent({
   imgSrc,
@@ -79,6 +80,19 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
 
   const slides = [...filmSlides, channelSlide];
 
+  const gridFallback = (
+    <div
+      className="films-grid"
+      style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2, background: 'var(--teal-mid)', border: '1px solid var(--teal-mid)' }}
+    >
+      {slides.map((slide) => (
+        <a key={slide.key} href={slide.href} target="_blank" rel="noopener noreferrer" className="film-card fade">
+          {slide.content}
+        </a>
+      ))}
+    </div>
+  );
+
   return (
     <section className="sec" id="films" style={{ background: 'var(--teal-mid)' }}>
       <div style={{ maxWidth: 1060, margin: '0 auto' }}>
@@ -103,20 +117,13 @@ export default function FilmsSection({ immersive }: { immersive: boolean }) {
         </p>
 
         {immersive ? (
-          <div className="fade">
-            <DeckCarousel items={slides} cardClassName="film-card" variant="flat" />
-          </div>
+          <ErrorBoundary fallback={gridFallback}>
+            <div className="fade">
+              <DeckCarousel items={slides} cardClassName="film-card" variant="flat" />
+            </div>
+          </ErrorBoundary>
         ) : (
-          <div
-            className="films-grid"
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2, background: 'var(--teal-mid)', border: '1px solid var(--teal-mid)' }}
-          >
-            {slides.map((slide) => (
-              <a key={slide.key} href={slide.href} target="_blank" rel="noopener noreferrer" className="film-card fade">
-                {slide.content}
-              </a>
-            ))}
-          </div>
+          gridFallback
         )}
 
         <div
