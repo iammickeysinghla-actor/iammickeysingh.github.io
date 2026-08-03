@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { filmCredits, theaterCredits, tvCredits, type Credit } from '../data/content';
 import { useScrollRig } from '../hooks/useScrollRig';
 
@@ -23,22 +24,11 @@ export default function Credits({ immersive }: { immersive: boolean }) {
   useScrollRig(wrapRef, immersive, [tab]);
 
   useEffect(() => {
-    if (!immersive) return;
     // Panels swap via display:none, so ScrollTrigger needs a nudge once the
     // newly visible rows have real layout to measure.
-    let cancelled = false;
-    const id = requestAnimationFrame(() => {
-      import('gsap/ScrollTrigger')
-        .then(({ ScrollTrigger }) => {
-          if (!cancelled) ScrollTrigger.refresh();
-        })
-        .catch(() => {});
-    });
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(id);
-    };
-  }, [tab, immersive]);
+    const id = requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => cancelAnimationFrame(id);
+  }, [tab]);
 
   return (
     <section className="sec" id="credits" style={{ background: 'var(--teal)' }}>

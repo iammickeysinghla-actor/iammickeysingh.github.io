@@ -11,7 +11,6 @@ import Lightbox from './components/Lightbox';
 import Training from './components/Training';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ErrorBoundary from './components/ErrorBoundary';
 import { useFadeIn } from './hooks/useFadeIn';
 import { useImmersive } from './hooks/useImmersive';
 
@@ -22,37 +21,19 @@ export default function App() {
 
   return (
     <>
-      <ErrorBoundary>
-        <Cursor />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <Nav />
-      </ErrorBoundary>
+      <Cursor />
+      <Nav />
       <Hero immersive={immersive} />
-      <ErrorBoundary>
-        <Reel />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <FilmsSection immersive={immersive} />
-      </ErrorBoundary>
+      <Reel />
+      <FilmsSection immersive={immersive} />
       <hr className="divider" />
-      <ErrorBoundary>
-        <About />
-      </ErrorBoundary>
+      <About />
       <hr className="divider" style={{ margin: 0, borderColor: 'var(--teal-mid)' }} />
-      <ErrorBoundary>
-        <Credits immersive={immersive} />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <Gallery immersive={immersive} onOpen={setLightboxSrc} />
-      </ErrorBoundary>
+      <Credits immersive={immersive} />
+      <Gallery immersive={immersive} onOpen={setLightboxSrc} />
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
-      <ErrorBoundary>
-        <Training />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <Contact />
-      </ErrorBoundary>
+      <Training />
+      <Contact />
       <Footer />
     </>
   );
