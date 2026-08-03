@@ -109,8 +109,8 @@ nav.scrolled .nav-links a:hover{color:#1c1c1c}
 .panel{display:none}.panel.on{display:block}
 .cr{display:grid;grid-template-columns:1fr auto;align-items:center;padding:18px 0;border-bottom:1px solid var(--teal-mid);gap:20px;transition:padding 0.2s,transform 0.2s,opacity 0.2s;transform-style:preserve-3d;will-change:transform,opacity}
 .cr:hover{padding-left:7px}
-.cr-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:#1c1c1c;margin-bottom:3px}
-.cr-sub{font-size:0.62rem;color:var(--muted);letter-spacing:0.07em}
+.cr-title{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:#1c1c1c;margin-bottom:4px}
+.cr-sub{font-size:0.67rem;color:var(--muted);letter-spacing:0.05em}
 .cr-role{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--coral-light);text-align:right;white-space:nowrap}
 
 /* GALLERY */
