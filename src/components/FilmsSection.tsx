@@ -38,7 +38,7 @@ function ChannelTileContent({ totalViews }: { totalViews: string }) {
     <>
       <div
         className="film-thumb"
-        style={{ background: 'var(--teal-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 180 }}
+        style={{ background: 'var(--teal-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', minHeight: 180 }}
       >
         <div style={{ textAlign: 'center', padding: 24 }}>
           <div style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', color: 'var(--coral)', marginBottom: 8 }}>{totalViews}</div>
