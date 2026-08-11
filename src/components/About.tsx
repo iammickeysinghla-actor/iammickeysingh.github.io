@@ -16,8 +16,8 @@ export default function About() {
             <em>Singh</em>
           </h2>
           <p className="bio-p">
-            Mickey Singh is a Los Angeles-based actor, writer, and producer whose work spans independent film, television, and
-            theater across three languages. Trained at the <strong>Meisner Technique Studio</strong> in San Francisco (two
+            Mickey Singh is a Los Angeles-based actor, writer, and producer, and <strong>SAG-AFTRA member</strong>, whose work
+            spans independent film, television, and theater across three languages. Trained at the <strong>Meisner Technique Studio</strong> in San Francisco (two
             years), <strong>Juilliard Extension</strong>, <strong>T. Schreiber Studio</strong> (Shakespeare), and ongoing scene
             study at <strong>The Acting Center</strong> in Los Angeles.
           </p>

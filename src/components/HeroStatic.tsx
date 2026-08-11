@@ -23,7 +23,7 @@ export default function HeroStatic() {
         <p className="hero-tag">
           Lead dramatic actor. Trained at Meisner Technique Studio &amp; The Acting Center.
           <br />
-          Performing in English, Hindi &amp; Punjabi.
+          Performing in English, Hindi &amp; Punjabi. SAG-AFTRA member.
         </p>
         <div className="cta-row">
           <a href={`https://youtu.be/${reelVideoId}`} target="_blank" rel="noopener noreferrer" className="btn-p">
