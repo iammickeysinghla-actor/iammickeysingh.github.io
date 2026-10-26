@@ -8,15 +8,21 @@ import About from './components/About';
 import Credits from './components/Credits';
 import Gallery from './components/Gallery';
 import Lightbox from './components/Lightbox';
+import VideoModal from './components/VideoModal';
+import ResumeModal from './components/ResumeModal';
 import Training from './components/Training';
+import Reps from './components/Reps';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import { useFadeIn } from './hooks/useFadeIn';
 import { useImmersive } from './hooks/useImmersive';
+import { reelVideoId } from './data/content';
 
 export default function App() {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [reelOpen, setReelOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
   const immersive = useImmersive();
   useFadeIn([immersive]);
 
@@ -28,9 +34,9 @@ export default function App() {
       <ErrorBoundary>
         <Nav />
       </ErrorBoundary>
-      <Hero immersive={immersive} />
+      <Hero immersive={immersive} onPlayReel={() => setReelOpen(true)} onOpenResume={() => setResumeOpen(true)} />
       <ErrorBoundary>
-        <Reel />
+        <Reel onPlay={() => setReelOpen(true)} />
       </ErrorBoundary>
       <ErrorBoundary>
         <FilmsSection />
@@ -47,11 +53,16 @@ export default function App() {
         <Gallery onOpen={setLightboxSrc} />
       </ErrorBoundary>
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
+      <VideoModal videoId={reelOpen ? reelVideoId : null} onClose={() => setReelOpen(false)} />
+      <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
       <ErrorBoundary>
         <Training />
       </ErrorBoundary>
       <ErrorBoundary>
-        <Contact />
+        <Reps />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Contact onOpenResume={() => setResumeOpen(true)} />
       </ErrorBoundary>
       <Footer />
     </>

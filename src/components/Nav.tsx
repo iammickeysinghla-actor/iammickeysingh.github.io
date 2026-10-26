@@ -28,6 +28,9 @@ export default function Nav() {
           <a href="#gallery">Gallery</a>
         </li>
         <li>
+          <a href="#representation">Reps</a>
+        </li>
+        <li>
           <a href="#contact">Contact</a>
         </li>
       </ul>

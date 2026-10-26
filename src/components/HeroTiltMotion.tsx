@@ -1,9 +1,14 @@
 import { lazy, Suspense } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { heroImg, reelVideoId, resumeUrl } from '../data/content';
+import { heroImg } from '../data/content';
 import ErrorBoundary from './ErrorBoundary';
 
 const ParticleField = lazy(() => import('../three/ParticleField'));
+
+interface HeroTiltMotionProps {
+  onPlayReel: () => void;
+  onOpenResume: () => void;
+}
 
 /**
  * The tilt/particle-enhanced hero. Only ever imported (and only ever runs
@@ -11,7 +16,7 @@ const ParticleField = lazy(() => import('../three/ParticleField'));
  * confirmed the device can handle it — see Hero.tsx, which lazy-loads this
  * component and falls back to HeroStatic on any load/render error.
  */
-export default function HeroTiltMotion() {
+export default function HeroTiltMotion({ onPlayReel, onOpenResume }: HeroTiltMotionProps) {
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const springX = useSpring(mx, { stiffness: 120, damping: 18 });
@@ -65,12 +70,12 @@ export default function HeroTiltMotion() {
           Performing in English, Hindi &amp; Punjabi. SAG-AFTRA member.
         </p>
         <div className="cta-row">
-          <a href={`https://youtu.be/${reelVideoId}`} target="_blank" rel="noopener noreferrer" className="btn-p">
+          <button type="button" onClick={onPlayReel} className="btn-p">
             ▶ &nbsp;Watch Reel
-          </a>
-          <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-g">
+          </button>
+          <button type="button" onClick={onOpenResume} className="btn-g">
             Resume &nbsp;↗
-          </a>
+          </button>
         </div>
       </motion.div>
       <div className="scroll-ind">

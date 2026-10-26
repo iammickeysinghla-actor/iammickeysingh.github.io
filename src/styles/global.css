@@ -45,9 +45,9 @@ nav.scrolled .nav-links a:hover{color:#1c1c1c}
 .hero-name em{font-style:italic;color:rgba(220,205,205,0.8)}
 .hero-tag{font-size:0.78rem;color:rgba(195,188,188,0.78);letter-spacing:0.08em;line-height:1.9;margin-bottom:40px;max-width:360px}
 .cta-row{display:flex;gap:16px;flex-wrap:wrap}
-.btn-p{background:var(--coral);color:var(--white);font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:13px 26px;display:inline-flex;align-items:center;gap:8px;transition:background 0.25s,transform 0.2s}
+.btn-p{background:var(--coral);color:var(--white);font-size:0.62rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:13px 26px;display:inline-flex;align-items:center;gap:8px;transition:background 0.25s,transform 0.2s;border:0;font-family:var(--sans);cursor:pointer}
 .btn-p:hover{background:var(--coral-dark);transform:translateY(-1px)}
-.btn-g{border:1px solid var(--teal-mid);color:#1c1c1c;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:13px 26px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s}
+.btn-g{border:1px solid var(--teal-mid);color:#1c1c1c;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;padding:13px 26px;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;background:none;font-family:var(--sans);cursor:pointer}
 .btn-g:hover{border-color:var(--muted);color:var(--coral)}
 #hero .btn-g{border-color:rgba(220,205,205,0.4);color:rgba(220,205,205,0.85)}
 #hero .btn-g:hover{border-color:rgba(220,205,205,0.8);color:var(--white)}
@@ -71,8 +71,8 @@ nav.scrolled .nav-links a:hover{color:#1c1c1c}
 .sec-coral .stat-l{color:rgba(242,240,238,0.55)}
 .sec-coral .c-email{color:var(--white);border-bottom-color:rgba(242,237,230,0.25)}
 .sec-coral .c-email:hover{color:rgba(255,190,195,0.9);border-color:rgba(255,220,185,0.4)}
-.sec-coral .socials a{color:rgba(242,240,238,0.55)}
-.sec-coral .socials a:hover{color:var(--white)}
+.sec-coral .socials a,.sec-coral .socials button{color:rgba(242,240,238,0.55)}
+.sec-coral .socials a:hover,.sec-coral .socials button:hover{color:var(--white)}
 .sec-teal{background:var(--teal-dark)}
 .sec-teal-mid{background:var(--teal-mid)}
 
@@ -174,8 +174,8 @@ nav.scrolled .nav-links a:hover{color:#1c1c1c}
 .contact-body{font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:40px}
 .c-email{font-family:var(--serif);font-size:1.6rem;color:var(--white);border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:4px;transition:color 0.3s,border-color 0.3s;display:inline-block;margin-bottom:44px}
 .socials{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
-.socials a{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);transition:color 0.3s}
-.socials a:hover{color:var(--coral-light)}
+.socials a,.socials button{background:none;border:0;cursor:pointer;font-family:inherit;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);transition:color 0.3s}
+.socials a:hover,.socials button:hover{color:var(--coral-light)}
 
 footer{border-top:1px solid var(--teal-mid);padding:28px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:var(--teal-dark)}
 footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
@@ -188,6 +188,33 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
 .lb.open{display:flex}
 .lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;z-index:1}
 .lb img{max-width:90vw;max-height:90vh;object-fit:contain;box-shadow:0 8px 48px rgba(0,0,0,0.6)}
+
+/* VIDEO MODAL */
+.vm{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;cursor:zoom-out;padding:40px 20px}
+.vm.open{display:flex}
+.vm-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;z-index:1}
+.vm-frame{width:min(960px,92vw);aspect-ratio:16/9;cursor:auto;box-shadow:0 8px 48px rgba(0,0,0,0.6)}
+.vm-frame iframe{width:100%;height:100%;border:0}
+
+/* RESUME MODAL */
+.rm{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:40px 20px}
+.rm.open{display:flex}
+.rm-close{position:absolute;top:20px;right:28px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;z-index:1}
+.rm-panel{width:min(760px,92vw);height:88vh;background:var(--teal);display:flex;flex-direction:column;cursor:auto;box-shadow:0 8px 48px rgba(0,0,0,0.6)}
+.rm-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;background:#1c1c1c;color:#fff;font-size:0.78rem;letter-spacing:0.04em}
+.rm-download{padding:9px 18px;font-size:0.6rem}
+.rm-panel iframe{flex:1;border:0;width:100%}
+
+/* REPRESENTATION */
+.reps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--teal-mid);margin-top:44px;border:1px solid var(--teal-mid)}
+.rep-card{background:var(--teal);padding:28px 24px}
+.rep-cat{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--coral-light);margin-bottom:12px}
+.rep-agency{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:400;color:#1c1c1c;margin-bottom:4px}
+a.rep-agency:hover{color:var(--coral)}
+.rep-name{font-size:0.75rem;color:var(--muted);margin-bottom:16px}
+.rep-line{display:block;font-size:0.72rem;color:#1c1c1c;margin-bottom:6px;word-break:break-word}
+a.rep-line:hover{color:var(--coral)}
+.rep-address{color:var(--muted)}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
@@ -241,10 +268,14 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
   .tr{grid-template-columns:1fr;gap:2px}
   .tr-year{text-align:left}
 
+  .reps-grid{grid-template-columns:1fr}
+  .rm-panel{height:92vh}
+  .rm-bar{font-size:0.68rem}
+
   .contact-wrap{padding:0 10px}
   .c-email{font-size:1.1rem;word-break:break-all}
   .socials{gap:10px}
-  .socials a{font-size:0.55rem;padding:9px 14px}
+  .socials a,.socials button{font-size:0.55rem;padding:9px 14px}
 
   footer{flex-direction:column;text-align:center;padding:24px 20px;gap:8px}
 

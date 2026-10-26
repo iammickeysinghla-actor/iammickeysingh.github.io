@@ -1,6 +1,6 @@
 import { contactEmail, socials } from '../data/content';
 
-export default function Contact() {
+export default function Contact({ onOpenResume }: { onOpenResume: () => void }) {
   return (
     <section className="sec sec-coral" id="contact">
       <div className="contact-wrap">
@@ -23,6 +23,9 @@ export default function Contact() {
               {s.label}
             </a>
           ))}
+          <button type="button" onClick={onOpenResume}>
+            Resume ↗
+          </button>
         </div>
       </div>
     </section>

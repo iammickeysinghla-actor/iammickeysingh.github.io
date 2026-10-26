@@ -1,6 +1,6 @@
 import { channelUrl, reelVideoId } from '../data/content';
 
-export default function Reel() {
+export default function Reel({ onPlay }: { onPlay: () => void }) {
   return (
     <section className="sec sec-teal" id="reel">
       <div className="reel-inner">
@@ -16,13 +16,14 @@ export default function Reel() {
           </a>
         </div>
         <div className="reel-frame fade">
-          <a
-            href={`https://youtu.be/${reelVideoId}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={onPlay}
+            aria-label="Play demo reel"
             style={{
               position: 'absolute',
               inset: 0,
+              width: '100%',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -30,6 +31,10 @@ export default function Reel() {
               gap: 20,
               textDecoration: 'none',
               background: 'var(--teal-dark)',
+              border: 'none',
+              padding: 0,
+              font: 'inherit',
+              cursor: 'pointer',
             }}
           >
             <img
@@ -57,7 +62,7 @@ export default function Reel() {
                 Watch Demo Reel
               </p>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </section>

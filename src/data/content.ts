@@ -1,7 +1,7 @@
 export const heroImg = 'https://static.wixstatic.com/media/3ac143_93c70562e358407696de2242af984657~mv2.jpg';
 export const aboutImg = 'https://static.wixstatic.com/media/3ac143_06976ca24bea44db87db4df57976dbf1~mv2.jpg';
-export const reelVideoId = 'C5Vdfuk2wPc';
-export const resumeUrl = 'https://drive.google.com/uc?export=download&id=1af__ecdSe5PrW_DdzWa9vH0DVc-UZLZJ';
+export const reelVideoId = '__G6yFm80dI';
+export const resumeUrl = '/documents/mickey-singh-resume.pdf';
 export const channelUrl = 'https://www.youtube.com/@iammickeysingh';
 export const contactEmail = 'iammickeysingh.la@gmail.com';
 
@@ -47,6 +47,8 @@ export const filmCredits: Credit[] = [
   { title: 'I Call It a Skragg', sub: 'Dir. Lauren Morales', role: 'Supporting' },
   { title: 'The Kohinoor', sub: 'Dir. Sirtaj Bhangu', role: 'Supporting' },
   { title: 'A New Gardner', sub: 'Dir. Matt Stivender', role: 'Supporting' },
+  { title: 'Dermes', sub: 'Dir. Aneka Meyersberg', role: 'Lead' },
+  { title: 'Prospects', sub: 'Dir. Carter', role: 'Lead' },
 ];
 
 export const tvCredits: Credit[] = [
@@ -61,7 +63,7 @@ export const theaterCredits: Credit[] = [
 ];
 
 export const stats = [
-  { n: '15+', l: 'Film Credits' },
+  { n: '16+', l: 'Film Credits' },
   { n: '3', l: 'Languages' },
   { n: '6+', l: 'Years Training' },
   { n: '2', l: 'TV Credits' },
@@ -90,7 +92,7 @@ export interface Training {
 }
 
 export const training: Training[] = [
-  { school: 'The Acting Center, Los Angeles', course: 'Scene Study (Ongoing) · Audition Intensive', year: '2026' },
+  { school: 'The Acting Center, Los Angeles', course: 'Scene Study (Ongoing) · Audition Intensive · Breakthrough Intensive', year: '2026' },
   { school: 'PEM Acting School, Los Angeles', course: 'Intensives 1, 2 & 3', year: '2025' },
   { school: 'T. Schreiber Studio, New York', course: 'Shakespeare', year: '2024' },
   { school: 'Juilliard Extension, New York', course: 'From Page to Stage · Scene Study', year: '2023' },
@@ -102,5 +104,43 @@ export const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/its.mickeysingh/' },
   { label: 'IMDb', href: 'https://www.imdb.com/name/nm12288923/' },
   { label: 'Actors Access', href: 'https://resumes.actorsaccess.com/mickey-singh' },
-  { label: 'Resume ↗', href: resumeUrl },
+];
+
+export interface Rep {
+  category: string;
+  agency: string;
+  repName: string;
+  phone: string;
+  email: string;
+  address: string;
+  website?: string;
+}
+
+export const reps: Rep[] = [
+  {
+    category: 'Talent Agent · Theatrical',
+    agency: 'Image Powerhouse Agency',
+    repName: 'Kim Loan Duong',
+    phone: '818-208-0405',
+    email: 'kim@imagepowerhouse.com',
+    address: '515 South Flower St., 18th Fl, Los Angeles, CA 90071',
+    website: 'https://imagepowerhouse.com',
+  },
+  {
+    category: 'Manager',
+    agency: 'MB Talent Management',
+    repName: 'Michelle Bee',
+    phone: '661-227-9956',
+    email: 'mbtalentmgnt@gmail.com',
+    address: 'Los Angeles, CA 90046',
+  },
+  {
+    category: 'Talent Agent · Commercial',
+    agency: 'LoveTalent Agency',
+    repName: 'Jaime Love',
+    phone: '323-401-8287',
+    email: 'jaime@lovetalent.com',
+    address: '1541 Ocean Ave, Suite 200, Santa Monica, CA 90401',
+    website: 'https://lovetalent.com',
+  },
 ];

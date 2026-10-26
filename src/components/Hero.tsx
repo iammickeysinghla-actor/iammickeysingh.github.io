@@ -10,17 +10,23 @@ const HeroTiltMotion = lazy(() => import('./HeroTiltMotion'));
  * or three.js involved at all — those libraries are never imported, never
  * executed, on that path.
  */
-export default function Hero({ immersive }: { immersive: boolean }) {
+interface HeroProps {
+  immersive: boolean;
+  onPlayReel: () => void;
+  onOpenResume: () => void;
+}
+
+export default function Hero({ immersive, onPlayReel, onOpenResume }: HeroProps) {
   return (
     <section id="hero">
       {immersive ? (
-        <ErrorBoundary fallback={<HeroStatic />}>
-          <Suspense fallback={<HeroStatic />}>
-            <HeroTiltMotion />
+        <ErrorBoundary fallback={<HeroStatic onPlayReel={onPlayReel} onOpenResume={onOpenResume} />}>
+          <Suspense fallback={<HeroStatic onPlayReel={onPlayReel} onOpenResume={onOpenResume} />}>
+            <HeroTiltMotion onPlayReel={onPlayReel} onOpenResume={onOpenResume} />
           </Suspense>
         </ErrorBoundary>
       ) : (
-        <HeroStatic />
+        <HeroStatic onPlayReel={onPlayReel} onOpenResume={onOpenResume} />
       )}
     </section>
   );
