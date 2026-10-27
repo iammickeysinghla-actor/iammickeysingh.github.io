@@ -270,8 +270,10 @@ a.rep-line:hover{color:var(--coral)}
   .tr-year{text-align:left}
 
   .reps-grid{grid-template-columns:1fr}
-  .rm-panel{height:92vh}
+  .rm{padding:0}
+  .rm-panel{width:100vw;height:100vh}
   .rm-bar{font-size:0.68rem}
+  .rm-close{top:14px;right:16px}
 
   .contact-wrap{padding:0 10px}
   .c-email{font-size:1.1rem;word-break:break-all}
