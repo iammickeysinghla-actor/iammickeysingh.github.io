@@ -1,4 +1,4 @@
-import { resumeUrl } from '../data/content';
+import { resumePageImages, resumeUrl } from '../data/content';
 import { useModalEscape } from '../hooks/useModalEscape';
 
 interface ResumeModalProps {
@@ -7,21 +7,16 @@ interface ResumeModalProps {
 }
 
 /**
- * Previews the resume PDF in a popup, with a download link as a reliable
- * fallback. The preview goes through Google's Docs Viewer rather than
- * loading the PDF directly in the iframe — browsers' own built-in PDF
- * renderers (notably iOS Safari/WebKit, which every iOS browser uses) don't
- * reliably fit the page to the iframe's width, cutting off the right edge
- * of every line on a narrow phone screen. Google's viewer renders
- * responsively regardless of browser, at the cost of needing the PDF to be
- * reachable at a public URL (so this only resolves once deployed, not in a
- * local/offline preview).
+ * Previews the resume as plain scrollable page images, with a download link
+ * for the actual PDF. Not an iframe to the PDF itself: iOS Safari (and so
+ * every iOS browser, since they all run on WebKit) can't actually render a
+ * PDF inside an iframe — it breaks out and takes over the whole tab instead
+ * of staying embedded, which happened with both a direct PDF src and
+ * Google's Docs Viewer (which itself redirects straight to the file on
+ * iOS). Plain images sidestep that entirely and are responsive by default.
  */
 export default function ResumeModal({ open, onClose }: ResumeModalProps) {
   useModalEscape(open, onClose);
-
-  const absoluteUrl = typeof window !== 'undefined' ? `${window.location.origin}${resumeUrl}` : resumeUrl;
-  const viewerSrc = `https://docs.google.com/viewer?url=${encodeURIComponent(absoluteUrl)}&embedded=true`;
 
   return (
     <div className={`rm ${open ? 'open' : ''}`} onClick={onClose}>
@@ -36,7 +31,11 @@ export default function ResumeModal({ open, onClose }: ResumeModalProps) {
               Download ↓
             </a>
           </div>
-          <iframe src={viewerSrc} title="Mickey Singh Resume" />
+          <div className="rm-pages">
+            {resumePageImages.map((src) => (
+              <img key={src} src={src} alt="Mickey Singh resume" />
+            ))}
+          </div>
         </div>
       )}
     </div>

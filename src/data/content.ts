@@ -2,6 +2,7 @@ export const heroImg = 'https://static.wixstatic.com/media/3ac143_93c70562e35840
 export const aboutImg = 'https://static.wixstatic.com/media/3ac143_06976ca24bea44db87db4df57976dbf1~mv2.jpg';
 export const reelVideoId = '__G6yFm80dI';
 export const resumeUrl = '/documents/mickey-singh-resume.pdf';
+export const resumePageImages = ['/documents/resume-page-1.jpg', '/documents/resume-page-2.jpg'];
 export const channelUrl = 'https://www.youtube.com/@iammickeysingh';
 export const contactEmail = 'iammickeysingh.la@gmail.com';
 
