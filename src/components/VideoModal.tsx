@@ -21,6 +21,7 @@ export default function VideoModal({ videoId, onClose }: VideoModalProps) {
             title="Mickey Singh Demo Reel"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
       )}
