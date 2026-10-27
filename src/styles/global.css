@@ -204,7 +204,7 @@ footer p{font-size:0.58rem;letter-spacing:0.14em;color:var(--muted)}
 .rm-panel{width:min(760px,92vw);height:88vh;background:var(--teal);display:flex;flex-direction:column;cursor:auto;box-shadow:0 8px 48px rgba(0,0,0,0.6)}
 .rm-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;background:#1c1c1c;color:#fff;font-size:0.78rem;letter-spacing:0.04em}
 .rm-download{padding:9px 18px;font-size:0.6rem}
-.rm-pages{flex:1;overflow-y:auto;background:#3a3836;display:flex;flex-direction:column;align-items:center;gap:2px;padding:2px 0}
+.rm-pages{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#3a3836;display:flex;flex-direction:column;align-items:center;gap:2px;padding:2px 0}
 .rm-pages img{width:100%;max-width:760px;height:auto;display:block}
 
 /* REPRESENTATION */
@@ -272,7 +272,7 @@ a.rep-line:hover{color:var(--coral)}
 
   .reps-grid{grid-template-columns:1fr}
   .rm{padding:0}
-  .rm-panel{width:100vw;height:100vh}
+  .rm-panel{width:100vw;height:100vh;height:100dvh}
   .rm-bar{font-size:0.68rem}
   .rm-close{top:14px;right:16px}
 
