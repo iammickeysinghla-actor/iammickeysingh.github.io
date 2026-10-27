@@ -33,7 +33,7 @@ export interface Credit {
 }
 
 export const filmCredits: Credit[] = [
-  { title: 'In Another Life, Tonight', sub: 'Sunset III · Dir. Tony Tachney', role: 'Lead' },
+  { title: 'In Another Life, Tonight', sub: 'Sunset III · Dir. Mickey Singh', role: 'Lead' },
   { title: 'Between Places', sub: 'Cinema 3.0 · Dir. Amir Jaffar', role: 'Lead' },
   { title: "We Can't Lose You", sub: 'Dir. Matt Winters', role: 'Lead' },
   { title: 'CODE', sub: 'Dir. Francisco Rosas', role: 'Lead' },

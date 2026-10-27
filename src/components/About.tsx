@@ -16,19 +16,19 @@ export default function About() {
             <em>Singh</em>
           </h2>
           <p className="bio-p">
-            Mickey Singh is a Los Angeles-based actor, writer, and producer, and <strong>SAG-AFTRA member</strong>, whose work
-            spans independent film, television, and theater across three languages. Trained at the <strong>Meisner Technique Studio</strong> in San Francisco (two
-            years), <strong>Juilliard Extension</strong>, <strong>T. Schreiber Studio</strong> (Shakespeare), and ongoing scene
-            study at <strong>The Acting Center</strong> in Los Angeles.
+            Mickey Singh is a <strong>SAG-AFTRA</strong> actor based in LA, trilingual in <strong>English, Hindi, and Punjabi</strong>.
+            He excels as the leading man and romantic lead, the grounded, analytical character the room trusts when things go
+            sideways, and the quietly dangerous, twisted one hiding in plain sight.
+          </p>
+          <p className="bio-p">
+            He runs <strong>Sunset III</strong>, his own production company, writing, producing, and sometimes casting his own
+            work — including his debut short <em>In Another Life, Tonight</em>, in post-production for summer 2026 — and trains
+            continuously at <strong>The Acting Center</strong>, with additional training at <strong>Juilliard Extension</strong>,{' '}
+            <strong>T. Schreiber Studio</strong> (Shakespeare), and the <strong>Meisner Technique Studio</strong>.
           </p>
           <p className="bio-p">
             Recent credits include the <strong>lead in <em>Between Places</em></strong> (Cinema 3.0, Dir. Amir Jaffar) and a
-            recurring role in <em>Strings Attached</em> Season 2. As founder of <strong>Sunset III</strong>, he
-            develops original work — including his debut short <em>In Another Life, Tonight</em>, in post-production for
-            summer 2026.
-          </p>
-          <p className="bio-p">
-            He performs fluently in <strong>English, Hindi, and Punjabi</strong>.
+            recurring role in <em>Strings Attached</em> Season 2.
           </p>
           <div className="stats-grid">
             {stats.map((s) => (
