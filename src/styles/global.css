@@ -59,18 +59,18 @@ nav.scrolled .nav-links a:hover{color:var(--white)}
 /* SECTIONS */
 .sec{padding:120px 56px}
 .sec-coral{background:var(--teal-dark)}
-.sec-coral .sec-label{color:rgba(255,190,195,0.8)}
-.sec-coral .sec-label::before{background:rgba(255,190,195,0.8)}
+.sec-coral .sec-label{color:var(--coral-light)}
+.sec-coral .sec-label::before{background:var(--coral-light)}
 .sec-coral .sec-title{color:var(--white)}
-.sec-coral .sec-title em{color:rgba(242,237,230,0.7)}
-.sec-coral .bio-p{color:rgba(242,237,230,0.82)}
+.sec-coral .sec-title em{color:var(--coral)}
+.sec-coral .bio-p{color:var(--light)}
 .sec-coral .bio-p strong{color:var(--white)}
 .sec-coral .stats-grid{background:rgba(0,0,0,0.2)}
 .sec-coral .stat{background:rgba(0,0,0,0.15)}
-.sec-coral .stat-n{color:var(--white)}
-.sec-coral .stat-l{color:rgba(242,240,238,0.55)}
-.sec-coral .c-email{color:var(--white);border-bottom-color:rgba(242,237,230,0.25)}
-.sec-coral .c-email:hover{color:rgba(255,190,195,0.9);border-color:rgba(255,220,185,0.4)}
+.sec-coral .stat-n{color:var(--coral-light)}
+.sec-coral .stat-l{color:var(--muted)}
+.sec-coral .c-email{color:var(--white);border-bottom-color:rgba(245,244,242,0.25)}
+.sec-coral .c-email:hover{color:var(--coral-light);border-color:var(--coral-light)}
 .sec-coral .socials a,.sec-coral .socials button{color:rgba(242,240,238,0.55)}
 .sec-coral .socials a:hover,.sec-coral .socials button:hover{color:var(--white)}
 .sec-teal{background:var(--teal-dark)}
@@ -153,7 +153,7 @@ nav.scrolled .nav-links a:hover{color:var(--white)}
 .deck-viewport.flat .deck-arrow-prev{left:-21px}
 .deck-viewport.flat .deck-arrow-next{right:-21px}
 .sec-coral .deck-arrow{background:rgba(24,18,12,0.4);border-color:rgba(255,255,255,0.3);color:rgba(242,240,238,0.9)}
-.sec-coral .deck-arrow:hover{border-color:rgba(255,190,195,0.9);color:rgba(255,190,195,0.9)}
+.sec-coral .deck-arrow:hover{border-color:var(--coral-light);color:var(--coral-light)}
 
 .deck-dots{display:flex;justify-content:center;gap:8px;margin-top:26px}
 .deck-dot{width:6px;height:6px;border-radius:3px;background:var(--teal-mid);border:none;padding:0;cursor:pointer;transition:background 0.25s,width 0.25s}
