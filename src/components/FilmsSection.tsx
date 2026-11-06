@@ -113,7 +113,7 @@ export default function FilmsSection() {
         </div>
         <p className="fade" style={{ fontSize: '0.85rem', color: 'var(--muted)', lineHeight: 1.9, maxWidth: 560, marginBottom: 32 }}>
           Original films written, directed, and produced under{' '}
-          <strong style={{ color: '#1c1c1c' }}>Sunset III</strong> — Mickey Singh's production company.
+          <strong style={{ color: 'var(--white)' }}>Sunset III</strong> — Mickey Singh's production company.
         </p>
 
         <ErrorBoundary fallback={gridFallback}>
@@ -127,7 +127,7 @@ export default function FilmsSection() {
           style={{
             marginTop: 40,
             paddingTop: 36,
-            borderTop: '1px solid rgba(24,18,12,0.15)',
+            borderTop: '1px solid rgba(245,244,242,0.12)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -151,7 +151,7 @@ export default function FilmsSection() {
               <span style={{ display: 'block', width: 18, height: 1, background: 'var(--coral-light)' }} />
               {comingSoon.eyebrow}
             </div>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: '1.8rem', fontWeight: 300, color: '#1c1c1c', marginBottom: 6, fontStyle: 'italic' }}>
+            <div style={{ fontFamily: 'var(--serif)', fontSize: '1.8rem', fontWeight: 300, color: 'var(--white)', marginBottom: 6, fontStyle: 'italic' }}>
               {comingSoon.title}
             </div>
             <div style={{ fontSize: '0.62rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--muted)' }}>{comingSoon.meta}</div>
@@ -161,8 +161,8 @@ export default function FilmsSection() {
               fontSize: '0.6rem',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: '#1c1c1c',
-              border: '1px solid rgba(24,18,12,0.25)',
+              color: 'var(--white)',
+              border: '1px solid rgba(245,244,242,0.25)',
               padding: '11px 22px',
               whiteSpace: 'nowrap',
             }}
