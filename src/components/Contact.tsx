@@ -4,9 +4,7 @@ export default function Contact({ onOpenResume }: { onOpenResume: () => void }) 
   return (
     <section className="sec sec-coral" id="contact">
       <div className="contact-wrap">
-        <p className="sec-label fade" style={{ color: 'rgba(255,190,195,0.8)' }}>
-          Contact
-        </p>
+        <p className="sec-label fade">Contact</p>
         <h2 className="sec-title fade">
           Let's <em>Work</em>
         </h2>
